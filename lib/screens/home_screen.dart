@@ -59,6 +59,39 @@ class _HomeScreenState extends State<HomeScreen> {
                 : Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    ColorFiltered(
+                      colorFilter:
+                          isPinOn
+                              ? ColorFilter.mode(
+                                Colors.transparent,
+                                BlendMode.multiply,
+                              )
+                              : const ColorFilter.matrix(<double>[
+                                0.2126,
+                                0.7152,
+                                0.0722,
+                                0,
+                                0,
+                                0.2126,
+                                0.7152,
+                                0.0722,
+                                0,
+                                0,
+                                0.2126,
+                                0.7152,
+                                0.0722,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                              ]),
+                      child: Image.asset('assets/images/v.png', height: 200),
+                    ),
+
+                    SizedBox(height: 20),
                     Text(
                       isPinOn ? 'Işık açık 🌞' : 'Işık kapalı 🌑',
                       style: TextStyle(fontSize: 24),
